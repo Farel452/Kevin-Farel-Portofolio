@@ -1,6 +1,4 @@
-/* =========================================
-   VARIABLES & MODERN RESET
-   ========================================= */
+/* var & modern css */
 :root {
     --bg-main: #050505;
     --bg-card: rgba(20, 20, 22, 0.4);
@@ -35,9 +33,7 @@ body {
     cursor: default;
 }
 
-/* =========================================
-   INTERACTIVE BACKGROUNDS (TIKTOK VIBE)
-   ========================================= */
+/* interactive background */
 #mouse-glow {
     position: fixed;
     top: 0;
@@ -86,9 +82,7 @@ body.is-hovering #mouse-glow {
     -webkit-mask-image: radial-gradient(ellipse at center, black 10%, transparent 80%);
 }
 
-/* =========================================
-   VERCEL / TIKTOK GLOW CARDS
-   ========================================= */
+/* glow */
 .glow-card {
     position: relative;
     background: var(--bg-card);
@@ -136,9 +130,7 @@ body.is-hovering #mouse-glow {
     border: 1px solid var(--border-color);
 }
 
-/* =========================================
-   TYPOGRAPHY & GLOBALS
-   ========================================= */
+/* Typography */
 .gradient-text {
     background: linear-gradient(to right, #fff, #a1a1aa);
     -webkit-background-clip: text;
@@ -174,9 +166,7 @@ body.is-hovering #mouse-glow {
     margin-top: 1rem;
 }
 
-/* =========================================
-   NAVBAR
-   ========================================= */
+/* Navbar */
 .header {
     position: fixed;
     top: 20px;
@@ -233,9 +223,7 @@ body.is-hovering #mouse-glow {
     box-shadow: 0 0 15px rgba(255, 26, 64, 0.3);
 }
 
-/* =========================================
-   BUTTONS
-   ========================================= */
+/* Buttons */
 .btn {
     display: inline-flex;
     align-items: center;
@@ -279,9 +267,7 @@ body.is-hovering #mouse-glow {
     justify-content: center;
 }
 
-/* =========================================
-   HERO SECTION
-   ========================================= */
+/* Hero */
 .hero-section {
     min-height: 100vh;
     padding: 180px 8% 80px;
@@ -418,9 +404,9 @@ body.is-hovering #mouse-glow {
     height: 100%;
     object-fit: cover;
     /* 1. Fokuskan gambar di 15% dari atas (area letak wajah) */
-    object-position: center 0.3rem;
+    object-position: center ;
     /* 2. Zoom gambar 1.3x */
-    transform: scale(2.1); 
+    transform: scale(1.3); 
     /* 3. Kunci titik pusat zoom persis di titik fokus tadi (wajah tidak akan bergerak naik) */
     transform-origin: center 15%; 
     border-radius: 22px;
@@ -453,9 +439,7 @@ body.is-hovering #mouse-glow {
     100% { transform: translateY(0px); }
 }
 
-/* =========================================
-   ABOUT SECTION
-   ========================================= */
+/* About */
 .about-grid {
     display: grid;
     grid-template-columns: 0.9fr 1.1fr;
@@ -545,9 +529,7 @@ body.is-hovering #mouse-glow {
     word-break: break-all; /* Fallback for very long emails */
 }
 
-/* =========================================
-   EDUCATION SECTION
-   ========================================= */
+/* Education */
 .education-list {
     display: flex;
     flex-direction: column;
@@ -609,9 +591,7 @@ body.is-hovering #mouse-glow {
     font-size: 1.15rem;
 }
 
-/* =========================================
-   EXPERIENCE SECTION (TIMELINE + IMAGE)
-   ========================================= */
+/* Experience */
 .experience-timeline {
     position: relative;
     max-width: 1000px;
@@ -703,9 +683,7 @@ body.is-hovering #mouse-glow {
     font-size: 1.15rem; /* Enhanced readability */
 }
 
-/* =========================================
-   PROJECTS SECTION
-   ========================================= */
+/* Project */
 .projects-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(360px, 1fr)); /* Wider cards */
@@ -812,9 +790,7 @@ body.is-hovering #mouse-glow {
     transform: translateY(-2px);
 }
 
-/* =========================================
-   SKILLS SECTION
-   ========================================= */
+/* skill */
 .skills-grid {
     display: grid;
     grid-template-columns: repeat(auto-fit, minmax(160px, 1fr));
@@ -844,9 +820,7 @@ body.is-hovering #mouse-glow {
     font-weight: 600;
 }
 
-/* =========================================
-   CONTACT SECTION
-   ========================================= */
+/* contact */
 .contact-wrapper {
     display: grid;
     grid-template-columns: 1fr 1fr;
@@ -913,9 +887,55 @@ body.is-hovering #mouse-glow {
     box-shadow: 0 0 15px rgba(255, 26, 64, 0.1);
 }
 
-/* =========================================
-   FOOTER
-   ========================================= */
+.file-upload-label {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    width: 100%;
+    background: rgba(0, 0, 0, 0.3);
+    border: 1px dashed var(--border-color); 
+    padding: 1.2rem 1.5rem;
+    border-radius: 12px;
+    color: var(--text-muted);
+    font-size: 1.1rem;
+    cursor: pointer;
+    transition: 0.3s ease;
+}
+
+.file-limit-text {
+    font-size: 0.8rem;
+    color: var(--text-muted);
+    opacity: 0.7;
+}
+
+.file-upload-text {
+    display: flex;
+    flex-direction: column;
+    align-items: flex-start;
+    gap: 0.2rem;
+    overflow: hidden;
+}
+
+.file-upload-label i {
+    font-size: 1.8rem;
+    color: var(--primary-red);
+    flex-shrink: 0;
+}
+
+.file-upload-label:hover {
+    border-color: var(--primary-red);
+    border-style: solid;
+    color: var(--text-main);
+    box-shadow: 0 0 15px rgba(255, 26, 64, 0.15);
+}
+
+.file-upload-label span {
+    white-space: nowrap;
+    overflow: hidden;
+    text-overflow: ellipsis;
+}
+
+/* footer */
 .footer {
     border-top: 1px solid var(--border-color);
     padding: 3rem 8%;
@@ -938,9 +958,7 @@ body.is-hovering #mouse-glow {
     font-size: 1rem;
 }
 
-/* =========================================
-   SCROLL ANIMATIONS
-   ========================================= */
+/* scroll animations */
 .scroll-animate {
     opacity: 0;
     transform: translateY(30px);
@@ -953,9 +971,7 @@ body.is-hovering #mouse-glow {
     transform: translateY(0);
 }
 
-/* =========================================
-   RESPONSIVE
-   ========================================= */
+/* responsive */
 @media (max-width: 1024px) {
     .hero-section {
         grid-template-columns: 1fr;

@@ -1,8 +1,4 @@
 document.addEventListener('DOMContentLoaded', () => {
-
-    /* ================================================
-       1 & 2. MOUSE TRACKING & GLOW EFFECTS
-       ================================================ */
     const glowBg = document.getElementById('mouse-glow');
     const glowCards = document.querySelectorAll('.glow-card');
     
@@ -14,7 +10,6 @@ document.addEventListener('DOMContentLoaded', () => {
             glowBg.style.setProperty('--mouse-y', `${e.clientY}px`);
         }
 
-        // Calculate mouse position relative to each card for the inner border glow
         glowCards.forEach(card => {
             const rect = card.getBoundingClientRect();
             const x = e.clientX - rect.left;
@@ -25,10 +20,6 @@ document.addEventListener('DOMContentLoaded', () => {
         });
     });
 
-    /* ================================================
-       3. "MENEBAL" HOVER EFFECT (TIKTOK VIBE)
-       ================================================ */
-    // Elements that trigger the thicker background glow when hovered
     const interactiveElements = document.querySelectorAll('a, button, .glow-card');
 
     interactiveElements.forEach(el => {
@@ -42,22 +33,16 @@ document.addEventListener('DOMContentLoaded', () => {
     });
 
 
-    /* ================================================
-       4. SCROLL REVEAL ANIMATIONS
-       ================================================ */
     const observerOptions = {
-        threshold: 0.15, // Trigger when 15% of element is visible
+        threshold: 0.15, 
         rootMargin: "0px 0px -50px 0px"
     };
 
     const scrollObserver = new IntersectionObserver((entries) => {
         entries.forEach(entry => {
             if (entry.isIntersecting) {
-                entry.target.classList.add('show');
-                // Optional: Stop observing after reveal if you don't want it to hide when scrolling up
-                // scrollObserver.unobserve(entry.target); 
+                entry.target.classList.add('show'); 
             } else {
-                // Remove class to animate again when scrolling back up
                 entry.target.classList.remove('show');
             }
         });
@@ -67,9 +52,6 @@ document.addEventListener('DOMContentLoaded', () => {
     animatedElements.forEach(el => scrollObserver.observe(el));
 
 
-    /* ================================================
-       5. ACTIVE NAVBAR LINK UPDATING
-       ================================================ */
     const sections = document.querySelectorAll('section');
     const navLinks = document.querySelectorAll('.nav-link');
 
@@ -79,7 +61,6 @@ document.addEventListener('DOMContentLoaded', () => {
         sections.forEach(section => {
             const sectionTop = section.offsetTop;
             const sectionHeight = section.clientHeight;
-            // Update active link when scrolled past 1/3 of the section
             if (pageYOffset >= (sectionTop - sectionHeight / 3)) {
                 current = section.getAttribute('id');
             }
@@ -92,5 +73,19 @@ document.addEventListener('DOMContentLoaded', () => {
             }
         });
     });
+    
+    const fileInput = document.getElementById('attachment');
+    const fileNameSpan = document.getElementById('file-name');
 
+    if (fileInput && fileNameSpan) {
+        fileInput.addEventListener('change', (e) => {
+            if (e.target.files.length > 0) {
+                fileNameSpan.textContent = e.target.files[0].name;
+                fileNameSpan.style.color = 'var(--text-main)';
+            } else {
+                fileNameSpan.textContent = 'Upload File / Attachment (Image, PDF, Doc, etc.)';
+                fileNameSpan.style.color = 'var(--text-muted)';
+            }
+        });
+    }
 });

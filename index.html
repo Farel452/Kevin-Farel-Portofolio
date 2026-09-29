@@ -76,7 +76,7 @@
         <div class="hero-image-wrapper scroll-animate">
             <div class="hero-card glow-card">
                 <div class="card-inner-glow"></div>
-                <img src="./asset/foto-formal-1.png" alt="Hero Banner">
+                <img src="./asset/foto-2.JPG" alt="Hero Banner">
                 
                 <div class="floating-badge badge-top glass-panel">
                     <i class='bx bx-mobile-alt'></i> Responsive UI
@@ -101,7 +101,7 @@
             <div class="about-text scroll-animate">
                 <h3 class="gradient-text">Christian Kevin Farellius</h3>
                 <p>Hi meet me Christian Kevin Farellius. People often call me Farel or Kevin. A Computer Science student at BINUS University specializing in end-to-end digital product creation bridging user centered UI/UX design with fullstack and frontend development.</p>
-                <p>Driven by creativity and critical thinking. I focus on building intuitive web and mobile applications that solve real world problems. I am passionate about turning creative ideas into functional digital solutions that empower users and align with advancing technology.</p>    
+                <p>Driven by creativity and critical thinking. I focus on building intuitive web that solve real world problems. I am passionate about turning creative ideas into functional digital solutions that empower users and align with advancing technology.</p>    
                 <div class="info-cards">
                     <div class="info-card glow-card scroll-animate">
                         <div class="icon-wrapper"><i class='bx bx-map-pin'></i></div>
@@ -296,7 +296,7 @@
 
             <div class="contact-form-box glow-card scroll-animate">
                 <h3>Send a Message</h3>
-                <form action="https://formsubmit.co/001dbb50e032b5367e2b907617ed0278" method="POST" id="contactForm">
+                <form action="https://formsubmit.co/001dbb50e032b5367e2b907617ed0278" method="POST" enctype="multipart/form-data" id="contactForm">
                     <input type="text" name="_honey" style="display:none">
                     <input type="hidden" name="_captcha" value="true">
                     <input type="hidden" name="_subject" value="New Message From Your Portfolio!">
@@ -310,6 +310,14 @@
                     </div>
                     <div class="form-group">
                         <textarea name="message" rows="4" placeholder="How can I help you?" required></textarea>
+                    </div>
+                    <div class="form-group">
+                        <label for="attachment" class="file-upload-label">
+                            <i class='bx bx-cloud-upload'></i>
+                            <span id="file-name">Upload Image / Attachment (Optional)</span>
+                            <small class="file-limit-text">Max file size: 10MB</small>
+                        </label>
+                        <input type="file" id="attachment" name="attachment" accept="image/*,.pdf,.doc,.docx,.xls,.xlsx,.zip" style="display: none;">
                     </div>
                     <button type="submit" class="btn btn-primary btn-full">
                         <span>Send Message</span>
